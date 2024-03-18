@@ -208,10 +208,7 @@
 
 
 ## 5. Логическая схема базы данных <a name="5"></a>
-![image](https://github.com/flioletty/highload/assets/92665311/17c2025e-8127-4fc0-a784-d38ea5f2749c)
-
-
-
+![image](https://github.com/flioletty/highload/assets/92665311/48ed8bc7-39b6-47c0-9563-c8de9473db0c)
 
 
 
