@@ -229,7 +229,34 @@
 
 ### Шардирование
 
-Шардируем таблицы по полю userId (таблицу Letter по RecipientId)
+Шардируем таблицы по полю userId 
+| Таблица | Поле по которому шардируем |
+|------------|-----------------|
+|User|-|
+|Session|-|
+|Letter| RecipientId|
+|LetterSearch|-|
+|LetterStatus|-|
+|Folder|UserId|
+|Attachment|-|
+|SearchHistory|UserId|
+|LettersAmount|-|
+|File|-|
+
+### Индексы
+
+| Таблица | Поле по которому индексируем |
+|------------|-----------------|
+|User|MailAddress|
+|Session|-|
+|Letter| Date|
+|LetterSearch|-|
+|LetterStatus|-|
+|Folder|UserId|
+|Attachment|-|
+|SearchHistory|-|
+|LettersAmount|-|
+|File|-|
 
 
 
