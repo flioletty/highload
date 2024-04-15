@@ -312,7 +312,8 @@
 
 ### 9. Схема проекта <a name="9"></a>
 
-![image](https://github.com/flioletty/highload/assets/92665311/bae47e08-ca30-4e99-aa15-3ae748c10b1f)
+![image](https://github.com/flioletty/highload/assets/92665311/191152bf-3033-46d4-8100-5be6627a23a7)
+
 
 
 ## Список литературы
