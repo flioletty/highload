@@ -210,7 +210,7 @@
 
 
 ## 5. Логическая схема базы данных <a name="5"></a>
-![image](https://github.com/flioletty/highload/assets/92665311/0379002c-38f9-483b-b2e1-36f00671d37d)
+![image](https://github.com/flioletty/highload/assets/92665311/f0b25af7-5312-4037-99f3-490eaa35c571)
 
 
 ## 6. Физическая схема базы данных <a name="6"></a>
@@ -226,7 +226,7 @@
 |LetterStatus|Cassandra|
 |Folder|Cassandra|
 |Attachment|PostgreSQL|
-|SearchHistory|PostgreSQL|
+|SearchHistory|Cassandra|
 |LettersAmount|ClickHouse|
 |File|S3|
 |StateMails|PostgreSQL|
@@ -254,18 +254,18 @@
 
 | Таблица | Поле по которому индексируем |
 |------------|-----------------|
-|User|MailAddress|
+|User|MailAddress (B-Tree)|
 |Session|-|
-|Letter| Date, RecipientId|
-|LetterSearch|Theme, Text, SenderName|
-|LetterStatus|UserId, LetterId|
-|Folder|UserId|
+|Letter| RecipientId, Date (B-Tree)|
+|LetterSearch|Theme, Text, SenderName (обратные индексы по словам) - отдельные не составные индексы|
+|LetterStatus|UserId, LetterId (SASI)|
+|Folder|UserId (SASI)|
 |Attachment|-|
-|SearchHistory|UserId|
-|LettersAmount|UserId|
+|SearchHistory|UserId (SASI)|
+|LettersAmount|UserId(B-Tree)|
 |File|-|
-|StateMails|MailAddress|
-|SocialNetworkMails|MailAddress|
+|StateMails|MailAddress (B-Tree)|
+|SocialNetworkMails|MailAddress (B-Tree)|
 
 ## 7. Алгоритмы <a name="7"></a>
 
@@ -285,7 +285,7 @@
 Будем использовать систему баллов для каждого пользователя. Прибавлять или отнимать баллы за отправленные письма. Если счетчик >0, письма пользователя не падают в спам, <0 отправленные пользователем письма отправляются в спам, если счетчик <100 модератор оценивает пометить ли пользователя как спамера.
 
  Пример разбалловки: 
- | Действие | Балл |
+| Действие | Балл |
 |--------------|-----|
 ссылок в письме >3 | -1 за каждую ссылку
 ссылок в письме <3 | +2
