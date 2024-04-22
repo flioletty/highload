@@ -14,6 +14,7 @@
 * ### [Алгоритмы](#7)
 * ### [Технологии](#8)
 * ### [Схема проекта](#9)
+* ### [Обеспечение надежности](#10)
 
 ## 1. Тема и целевая аудитория <a name="1"></a>
 
@@ -225,6 +226,7 @@
 |LetterSearch|ElasticSearch|
 |LetterStatus|Cassandra|
 |Folder|Cassandra|
+|Chain|Cassandra|
 |Attachment|PostgreSQL|
 |SearchHistory|Cassandra|
 |LettersAmount|ClickHouse|
@@ -243,6 +245,7 @@
 |LetterSearch|-|
 |LetterStatus|UserId|
 |Folder|UserId|
+|Chain|UserId|
 |Attachment|UserId|
 |SearchHistory|UserId|
 |LettersAmount|UserId|
@@ -260,6 +263,7 @@
 |LetterSearch|Theme, Text, SenderName (обратные индексы по словам) - отдельные не составные индексы|
 |LetterStatus|UserId, LetterId (SASI)|
 |Folder|UserId (SASI)|
+|Chain|UserId (SASI)|
 |Attachment|-|
 |SearchHistory|UserId (SASI)|
 |LettersAmount|UserId(B-Tree)|
@@ -339,6 +343,31 @@
 
 ![image](https://github.com/flioletty/highload/assets/92665311/191152bf-3033-46d4-8100-5be6627a23a7)
 
+## 10. Обеспечение надежности <a name="10"></a>
+
+### Резервирование
+1. Резервирование ДЦ: у нас 2 дц (Москва и Ярославская область), в случае падения одного данные можно будет восстановить со второго
+2. Резервирование БД:
+   - PostgreSQL Мастер-слейв репликация с помощью встроенной Streaming replication по 2 реплики таблиц User и 1 реплике остальных таблиц в рамках одного дц
+   - Cassandra со стратегией репликации данных NetworkTopologyStrategy репликации по дц и Peer-to-Peer репликации внутри одного дц по 2 реплики таблиц
+   - Redis Мастер-слейв репликация по 2 реплики
+   - ClickHouse по 1 реплике с ReplicatedMergeTree
+   - S3 Cross-Region Replication данных между разными регионами для обеспечения отказоустойчивости и включение версионирования объектов для восстановления данных в случае ошибок.
+3. Резервирование физических компонетов (сервера, диски и т.д.)
+4. В Kafka гарантия at most once
+
+### Сегментирование
+Выделим следующие сегменты: 
+- `sorter`, отвечающий за распределения писем по папкам и чуть более затратный по ресурсам чем остальные - сложный неважный
+- `auth`, который работает при каждом запросе - простой и посещаемый
+- `letters`, обеспечивающий основную логику работы сервиса по разным сегментам - простой важный
+- `searcher` и `statistics` выделим отдельно - неважные и непосещаемые
+
+### Failover policy
+Уменьшение посылаемых запросов на проблемный хост, компонент по паттерну Circuit Breaker (если 75% запросов достигает верхнего порога (150–200 мс), это означает, что сервис медленно выходит из строя и надо ограничить количество запросов)
+
+### Graceful shutdown
+Будем использовать Graceful Node Shutdown в Kubernetes, чтобы при остановке сервиса, не терялись обрабатываемые в этот момент запросы
 
 
 ## Список литературы
