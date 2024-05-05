@@ -15,6 +15,7 @@
 * ### [Технологии](#8)
 * ### [Схема проекта](#9)
 * ### [Обеспечение надежности](#10)
+* ### [Расчет ресурсов](#11)
 
 ## 1. Тема и целевая аудитория <a name="1"></a>
 
@@ -374,6 +375,35 @@
 
 ### Асинхронные паттерны
 Отбивка статистики. На каждую статистику есть свои ручки в statistics сервисе, при запросах по этим ручкам с помощью kafka асинхронно их записываем в бд
+
+## 11. Расчет ресурсов <a name="11"></a>
+
+### Распределение ресурсов по сервисам
+
+| Сервис     | Целевая пиковая нагрузка приложения | CPU   | RAM     |
+| ---------- | ----------------------------------- | ----- | ------- |
+| Letters    | 90 000                              | 9 000 | 900 GB  |
+| Sorter     | 15 000                              | 1 500 | 150 GB  |
+| Auth       | 90 000                              | 9 000 | 900 GB  |
+| Searcher   | 5 000                               |   500 |  50 GB  |
+| Statistics | 10 000                              | 1 000 | 100 GB  |
+| User       | 10 000                              | 1 000 | 100 GB  |
+
+### Конфигурация серверов
+
+| Сервис         | Конфигурация                                                 | Cores | Cnt | Стоимость |
+| -------------- | ------------------------------------------------------------ | ----- | --- | --------- |
+| Letters        | CyberServe EPYC EP1-102 / AMD EPYC 7573X - 32 Cores /  1x8GB |  32   | 60  | €  8 212  |
+| Sorter         | CyberServe Xeon SP1-P04S G4  |  32   | 4   | €    550 |
+| Auth           | CyberServe EPYC EP1-102 / AMD EPYC 7573X - 32 Cores /  1x8GB |  32   | 6   | €    826  |
+| Searcher       | CyberServe EPYC EP1-102 / AMD EPYC 7573X - 32 Cores /  1x8GB |  32   | 32  | €  4 400  |
+| Statistics     | CyberServe EPYC EP1-102 / AMD EPYC 7573X - 32 Cores /  1x8GB |  32   |  7   | €  1 000 |
+| User           | CyberServe EPYC EP1-102 / AMD EPYC 7573X - 32 Cores /  1x8GB |  32   |  7   | €  1 000 |
+| Балансировщики | CyberServe EPYC EP1-102 / AMD EPYC 7573X - 32 Cores /  1x8GB |  24   | 90  | € 12 318 |
+| Elasticsearch  | CyberStore 472S 12GB/s Storage Server / Intel Xeon Silver 4316 Processor 20 Cores /  RAM 16x128GB / HDD 72x2.4TB |  20   |     5 | €      1 500  |
+| PostgreSQL     | CyberStore 472S 12GB/s Storage Server / Intel Xeon Silver 4316 Processor 20 Cores /  RAM 16x128GB / HDD 72x2.4TB |  20   |    10 | €      3 000  |
+| Reddis         | CyberStore 212S 12GB/s Storage Server / Intel Xeon Silver 4310 Processor 12 Cores /  RAM 8x8GB / HDD 1x1TB       |  12   |     5 | €        500  |
+| s3mail.ru      | CyberStore 472S 12GB/s Storage Server / Intel Xeon Silver 4316 Processor 20 Cores /  RAM 16x128GB / HDD 72x20TB  |  20   |   710 | €    190 500  |
 
 ## Список литературы
 
