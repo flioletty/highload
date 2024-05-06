@@ -391,20 +391,20 @@
 | Statistics | 10 000                              | 1 000 | 100 GB  |1 Gbit/s |
 | User       | 10 000                              | 1 000 | 100 GB  |56,8 Gbit/s |
 
-Итоговая нагрузка 965,4 Gbit/s и 91 442 RPS
+Итоговая нагрузка 2 292,8 Gbit/s и 310 000 RPS
 
 ### Конфигурация серверов
 
 | Сервис    | Хостинг | Конфигурация                                                              | Cores | Cnt | Покупка, $ | Аренда, $ |
 |-----------|---------|---------------------------------------------------------------------------|-------|-----|------------|-----------|
-| Letters      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4     | 3   | 997.52       | 300        |
-| Letters_read      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4  | 3   | 997.52       | 300        |
-| Letters_write    | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 3   | 997.52       | 300        |
-| Sorter      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 3   | 997.52       | 300        |
-| Auth      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 3   | 997.52       | 300        |
-| Searcher      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 3   | 997.52       | 300        |
-| Statistics      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 3   | 997.52       | 300        |
-| User      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 3   | 997.52       | 300        |
+| Letters      | own     | Intel Xeon E-2314 Processor - 8 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 8     | 3   | 4338       | 300        |
+| Letters_read      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4  | 3   | 2991       | 300        |
+| Letters_write    | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 2   | 1994       | 200        |
+| Sorter      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 2   | 1994       | 200        |
+| Auth      | own     | Intel Xeon E-2314 Processor - 8 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 8   | 3   | 4338       | 300        |
+| Searcher      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 2   | 1994       | 100        |
+| Statistics      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 2   | 1994       | 200        |
+| User      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 2   | 1994       | 200        |
 
 ## Список литературы
 
