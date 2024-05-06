@@ -382,14 +382,14 @@
 
 | Сервис     | Целевая пиковая нагрузка приложения | CPU   | RAM     | Net |
 | ---------- | ----------------------------------- | ----- | ------- |--------------|
-| Letters    | 90 000                              | 9 000 | 900 GB  | 965,4 Gbit/s |
-| Letters_read| 53 000                              | 5 300 | 900 GB  | 634,4 Gbit/s |
-| Letters_write| 37 000                              | 3 700 | 900 GB  | 331 Gbit/s |
-| Sorter     | 15 000                              | 1 500 | 150 GB  | 42,6 Gbit/s |
-| Auth       | 90 000                              | 9 000 | 900 GB  | 255,4 Gbit/s |
-| Searcher   | 5 000                               |   500 |  50 GB  |8,8 Gbit/s |
-| Statistics | 10 000                              | 1 000 | 100 GB  |1 Gbit/s |
-| User       | 10 000                              | 1 000 | 100 GB  |56,8 Gbit/s |
+| Letters    | 90 000                              | 900 | 900 GB  | 965,4 Gbit/s |
+| Letters_read| 53 000                              | 530 | 900 GB  | 634,4 Gbit/s |
+| Letters_write| 37 000                              | 370 | 900 GB  | 331 Gbit/s |
+| Sorter     | 15 000                              | 150 | 150 GB  | 42,6 Gbit/s |
+| Auth       | 90 000                              | 900 | 900 GB  | 255,4 Gbit/s |
+| Searcher   | 5 000                               |   50 |  50 GB  |8,8 Gbit/s |
+| Statistics | 10 000                              | 100 | 100 GB  |1 Gbit/s |
+| User       | 10 000                              | 100 | 100 GB  |56,8 Gbit/s |
 
 Итоговая нагрузка 2 292,8 Gbit/s и 310 000 RPS
 
@@ -397,14 +397,14 @@
 
 | Сервис    | Хостинг | Конфигурация                                                              | Cores | Cnt | Покупка, $ | Аренда, $ |
 |-----------|---------|---------------------------------------------------------------------------|-------|-----|------------|-----------|
-| Letters      | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     | 70   | 15 571       |         |
-| Letters_read      | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     | 41   |  15 571        |         |
-| Letters_write    | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     | 29   |  15 571        |         |
-| Sorter      | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     | 12   |  15 571        |         |
-| Auth      | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     |  70  |  15 571        |         |
-| Searcher      | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     | 4   |  15 571        |         |
-| Statistics      | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     | 78   |  15 571        |         |
-| User      | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     | 78  |  15 571        |         |
+| Letters      | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     | 7   | 15 571       |         |
+| Letters_read      | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     | 4   |  15 571        |         |
+| Letters_write    | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     | 3   |  15 571        |         |
+| Sorter      | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     | 2   |  15 571        |         |
+| Auth      | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     |  7  |  15 571        |         |
+| Searcher      | own     | AMD EPYC 9754 - 64 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 64     | 2   |  10 763        |         |
+| Statistics      | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     | 2   |  15 571        |         |
+| User      | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     | 2  |  15 571        |         |
 
 ## Список литературы
 
