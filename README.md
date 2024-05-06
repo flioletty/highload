@@ -383,8 +383,8 @@
 | Сервис     | Целевая пиковая нагрузка приложения | CPU   | RAM     | Net |
 | ---------- | ----------------------------------- | ----- | ------- |--------------|
 | Letters    | 90 000                              | 9 000 | 900 GB  | 965,4 Gbit/s |
-| Letters_read| 53 000                              | 9 000 | 900 GB  | 634,4 Gbit/s |
-| Letters_write| 37 000                              | 9 000 | 900 GB  | 331 Gbit/s |
+| Letters_read| 53 000                              | 5 300 | 900 GB  | 634,4 Gbit/s |
+| Letters_write| 37 000                              | 3 700 | 900 GB  | 331 Gbit/s |
 | Sorter     | 15 000                              | 1 500 | 150 GB  | 42,6 Gbit/s |
 | Auth       | 90 000                              | 9 000 | 900 GB  | 255,4 Gbit/s |
 | Searcher   | 5 000                               |   500 |  50 GB  |8,8 Gbit/s |
@@ -397,14 +397,14 @@
 
 | Сервис    | Хостинг | Конфигурация                                                              | Cores | Cnt | Покупка, $ | Аренда, $ |
 |-----------|---------|---------------------------------------------------------------------------|-------|-----|------------|-----------|
-| Letters      | own     | Intel Xeon E-2314 Processor - 8 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 8     | 3   | 4338       | 300        |
-| Letters_read      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4  | 3   | 2991       | 300        |
-| Letters_write    | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 2   | 1994       | 200        |
-| Sorter      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 2   | 1994       | 200        |
-| Auth      | own     | Intel Xeon E-2314 Processor - 8 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 8   | 3   | 4338       | 300        |
-| Searcher      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 2   | 1994       | 100        |
-| Statistics      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 2   | 1994       | 200        |
-| User      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 2   | 1994       | 200        |
+| Letters      | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     | 70   | 15 571       |         |
+| Letters_read      | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     | 41   |  15 571        |         |
+| Letters_write    | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     | 29   |  15 571        |         |
+| Sorter      | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     | 12   |  15 571        |         |
+| Auth      | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     |  70  |  15 571        |         |
+| Searcher      | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     | 4   |  15 571        |         |
+| Statistics      | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     | 78   |  15 571        |         |
+| User      | own     | AMD EPYC 9754 - 128 Cores, 2.25/3.10GHz/ CyberServe EPYC EP1 | 128     | 78  |  15 571        |         |
 
 ## Список литературы
 
