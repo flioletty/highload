@@ -380,30 +380,31 @@
 
 ### Распределение ресурсов по сервисам
 
-| Сервис     | Целевая пиковая нагрузка приложения | CPU   | RAM     |
-| ---------- | ----------------------------------- | ----- | ------- |
-| Letters    | 90 000                              | 9 000 | 900 GB  |
-| Sorter     | 15 000                              | 1 500 | 150 GB  |
-| Auth       | 90 000                              | 9 000 | 900 GB  |
-| Searcher   | 5 000                               |   500 |  50 GB  |
-| Statistics | 10 000                              | 1 000 | 100 GB  |
-| User       | 10 000                              | 1 000 | 100 GB  |
+| Сервис     | Целевая пиковая нагрузка приложения | CPU   | RAM     | Net |
+| ---------- | ----------------------------------- | ----- | ------- |--------------|
+| Letters    | 90 000                              | 9 000 | 900 GB  | 965,4 Gbit/s |
+| Letters_read| 53 000                              | 9 000 | 900 GB  | 634,4 Gbit/s |
+| Letters_write| 37 000                              | 9 000 | 900 GB  | 331 Gbit/s |
+| Sorter     | 15 000                              | 1 500 | 150 GB  | 42,6 Gbit/s |
+| Auth       | 90 000                              | 9 000 | 900 GB  | 255,4 Gbit/s |
+| Searcher   | 5 000                               |   500 |  50 GB  |8,8 Gbit/s |
+| Statistics | 10 000                              | 1 000 | 100 GB  |1 Gbit/s |
+| User       | 10 000                              | 1 000 | 100 GB  |56,8 Gbit/s |
+
+Итоговая нагрузка 965,4 Gbit/s и 91 442 RPS
 
 ### Конфигурация серверов
 
-| Сервис         | Конфигурация                                                 | Cores | Cnt | Стоимость |
-| -------------- | ------------------------------------------------------------ | ----- | --- | --------- |
-| Letters        | CyberServe EPYC EP1-102 / AMD EPYC 7573X - 32 Cores /  1x8GB |  32   | 60  | €  8 212  |
-| Sorter         | CyberServe Xeon SP1-P04S G4  |  32   | 4   | €    550 |
-| Auth           | CyberServe EPYC EP1-102 / AMD EPYC 7573X - 32 Cores /  1x8GB |  32   | 6   | €    826  |
-| Searcher       | CyberServe EPYC EP1-102 / AMD EPYC 7573X - 32 Cores /  1x8GB |  32   | 32  | €  4 400  |
-| Statistics     | CyberServe EPYC EP1-102 / AMD EPYC 7573X - 32 Cores /  1x8GB |  32   |  7   | €  1 000 |
-| User           | CyberServe EPYC EP1-102 / AMD EPYC 7573X - 32 Cores /  1x8GB |  32   |  7   | €  1 000 |
-| Балансировщики | CyberServe EPYC EP1-102 / AMD EPYC 7573X - 32 Cores /  1x8GB |  24   | 90  | € 12 318 |
-| Elasticsearch  | CyberStore 472S 12GB/s Storage Server / Intel Xeon Silver 4316 Processor 20 Cores /  RAM 16x128GB / HDD 72x2.4TB |  20   |     5 | €      1 500  |
-| PostgreSQL     | CyberStore 472S 12GB/s Storage Server / Intel Xeon Silver 4316 Processor 20 Cores /  RAM 16x128GB / HDD 72x2.4TB |  20   |    10 | €      3 000  |
-| Reddis         | CyberStore 212S 12GB/s Storage Server / Intel Xeon Silver 4310 Processor 12 Cores /  RAM 8x8GB / HDD 1x1TB       |  12   |     5 | €        500  |
-| s3mail.ru      | CyberStore 472S 12GB/s Storage Server / Intel Xeon Silver 4316 Processor 20 Cores /  RAM 16x128GB / HDD 72x20TB  |  20   |   710 | €    190 500  |
+| Сервис    | Хостинг | Конфигурация                                                              | Cores | Cnt | Покупка, $ | Аренда, $ |
+|-----------|---------|---------------------------------------------------------------------------|-------|-----|------------|-----------|
+| Letters      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4     | 3   | 997.52       | 300        |
+| Letters_read      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4  | 3   | 997.52       | 300        |
+| Letters_write    | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 3   | 997.52       | 300        |
+| Sorter      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 3   | 997.52       | 300        |
+| Auth      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 3   | 997.52       | 300        |
+| Searcher      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 3   | 997.52       | 300        |
+| Statistics      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 3   | 997.52       | 300        |
+| User      | own     | Intel Xeon E-2314 Processor - 4 Cores/8GB 2933MHz DDR4/CyberServe Xeon E-100S | 4   | 3   | 997.52       | 300        |
 
 ## Список литературы
 
