@@ -341,7 +341,8 @@
 |Scikit-learn | Для написание Байессовского классификатора для антиспама | Библиотека для машинного обучения в Python |
 
 ## 9. Схема проекта <a name="9"></a>
-![image](https://github.com/flioletty/highload/assets/92665311/05aff48b-6c23-4e0b-a61f-048fa9f7a472)
+![image](https://github.com/flioletty/highload/assets/92665311/b6161599-5643-4e2f-8e9d-b97ac9f3ac3f)
+
 
 ## 10. Обеспечение надежности <a name="10"></a>
 
